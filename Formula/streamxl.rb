@@ -1,4 +1,5 @@
 class Streamxl < Formula
+  include Language::Python::Virtualenv
   desc "High-performance streaming XLSX reader for Python, powered by Rust"
   homepage "https://github.com/Mullassery/streamXL"
   license "MIT"

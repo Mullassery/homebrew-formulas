@@ -1,4 +1,5 @@
 class Pyhound < Formula
+  include Language::Python::Virtualenv
   desc "Rust retrieval diagnostics engine for Python"
   homepage "https://github.com/Mullassery/PyHound"
   license "MIT"

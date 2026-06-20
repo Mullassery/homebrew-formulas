@@ -1,4 +1,5 @@
 class Prismnote < Formula
+  include Language::Python::Virtualenv
   desc "Modern, open-source Jupyter-compatible data science notebook"
   homepage "https://github.com/Mullassery/prismnote"
   license "MIT"

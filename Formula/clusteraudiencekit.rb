@@ -1,4 +1,5 @@
 class Clusteraudiencekit < Formula
+  include Language::Python::Virtualenv
   desc "High-performance audience segmentation engine with Python bindings"
   homepage "https://github.com/Mullassery/clusteraudiencekit"
   license "MIT"
