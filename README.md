@@ -6,10 +6,10 @@ Homebrew formulae for Georgi Mullassery's open-source tools.
 
 ```bash
 brew tap Mullassery/tap
-brew install streamxl              # streaming XLSX reader (Rust)
-brew install clusteraudiencekit    # audience segmentation engine (Rust)
-brew install pyhound               # RAG/LLM retrieval diagnostics (Rust)
-brew install prismnote             # Jupyter-compatible notebook
+brew install streamxl # streaming XLSX reader (Rust)
+brew install clusteraudiencekit # audience segmentation engine (Rust)
+brew install pyhound # RAG/LLM retrieval diagnostics (Rust)
+brew install prismnote # Jupyter-compatible notebook
 ```
 
 Each formula installs the package from PyPI into an isolated virtualenv.
