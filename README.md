@@ -1,5 +1,7 @@
 # homebrew-tap
 
+[![Grapify](https://img.shields.io/badge/Grapify-Code%20Scan-purple)](https://grapify.ai)
+
 Homebrew formulae for Georgi Mullassery's open-source tools.
 
 ## Usage
