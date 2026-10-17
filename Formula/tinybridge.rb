@@ -1,7 +1,7 @@
 class Tinybridge < Formula
   desc "Production-grade virtual machine platform with cross-platform support"
   homepage "https://github.com/Mullassery/TinyBridge"
-  license "MIT"
+  license "Apache-2.0"
   version "0.4.0"
 
   on_macos do

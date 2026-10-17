@@ -12,6 +12,9 @@ class Pyhound < Formula
 
   depends_on "python@3.13"
 
+  # Only an arm64 wheel is published upstream — fail cleanly on Intel.
+  disable! date: "2026-10-14", because: :unsupported unless Hardware::CPU.arm?
+
   def install
     venv = virtualenv_create(libexec, "python3.13")
     venv.pip_install Dir[buildpath/"*.whl"].first
