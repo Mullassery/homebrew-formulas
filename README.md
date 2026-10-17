@@ -19,14 +19,24 @@ brew install <formula>
 
 This tap ships the following formulas. They are not all PyPI virtualenvs:
 
-- `prismnote` — Jupyter-compatible notebook (PyPI wheel, Python virtualenv)
 - `streamxl` — streaming XLSX reader (arm64-only PyPI wheel, Python virtualenv)
 - `clusteraudiencekit` — audience segmentation engine (arm64-only PyPI wheel, Python virtualenv)
 - `pyhound` — RAG/LLM retrieval diagnostics (arm64-only PyPI wheel, Python virtualenv)
 - `tinybridge`, `tinybridged`, `tinybridge-vmhost` — TinyBridge CLI, daemon, and VM host (prebuilt release tarballs)
 
 The Rust-backed formulas (`streamxl`, `clusteraudiencekit`, `pyhound`) publish
-arm64-only wheels and refuse to install on Intel Macs.
+arm64-only wheels and refuse to install on Intel Macs. The TinyBridge formulas
+(`tinybridge`, `tinybridged`, `tinybridge-vmhost`) are also arm64-only as of
+v0.6.1, which is why they carry the same arm guard.
+
+`prismnote` is **not** shipped from this tap: the old `prismnote` formula here
+pinned a stale 0.3.1 PyPI wheel that predates the real binary distribution.
+Install it from the maintained tap instead:
+
+```bash
+brew tap Mullassery/homebrew-prismnote
+brew install prismnote
+```
 
 ## Notes
 

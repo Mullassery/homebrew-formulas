@@ -1,25 +1,36 @@
-class Tinybridge < Formula
-  desc "Production-grade virtual machine platform with cross-platform support"
-  homepage "https://github.com/Mullassery/TinyBridge"
-  license "Apache-2.0"
-  version "0.4.0"
+# frozen_string_literal: true
 
-  on_macos do
-    on_intel do
-      url "https://github.com/Mullassery/TinyBridge/releases/download/v0.4.0/tinybridge-0.4.0-x86_64-apple-darwin.tar.gz"
-      sha256 "37f841ca835b203276e11e48666a11ad2f8ff197d218f26887c6e749b84421ed"
-    end
-    on_arm do
-      url "https://github.com/Mullassery/TinyBridge/releases/download/v0.4.0/tinybridge-0.4.0-aarch64-apple-darwin.tar.gz"
-      sha256 "37f841ca835b203276e11e48666a11ad2f8ff197d218f26887c6e749b84421ed"
-    end
-  end
+class Tinybridge < Formula
+  desc "Run Linux environments on macOS with zero configuration"
+  homepage "https://github.com/Mullassery/tinybridge"
+  url "https://github.com/Mullassery/tinybridge/releases/download/v0.6.1/tinybridge-0.6.1-aarch64-apple-darwin.tar.gz"
+  sha256 "ae8a95e8003a67c761ef68833864bf915becc71814311bbbb17942a6c6fd083b"
+  license "Apache-2.0"
+
+  depends_on macos: :ventura
+
+  # Only an Apple Silicon (arm64) build is published as of v0.6.1 — no
+  # Intel (x86_64) release artifact currently exists. (Previously this
+  # formula listed an x86_64 URL and reused the arm64 checksum for both,
+  # which could never install on either architecture.)
+  disable! date: "2026-10-14", because: :unsupported unless Hardware::CPU.arm?
 
   def install
     bin.install "tinybridge"
   end
 
+  def caveats
+    <<~EOS
+      This installs the CLI only. For the background daemon (required for
+      most workflows) and the per-VM host process, install `tinybridged`:
+        brew install tinybridged
+
+      See the main repo's README "Honest status" section for what does and
+      does not work yet.
+    EOS
+  end
+
   test do
-    system bin/"tinybridge", "--version"
+    assert_match "tinybridge", shell_output("#{bin}/tinybridge --version")
   end
 end
