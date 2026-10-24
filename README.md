@@ -1,7 +1,5 @@
 # homebrew-formulas
 
-[![Graphify](https://img.shields.io/badge/Graphify-knowledge%20graph-blue)](https://github.com/Graphify-Labs/graphify)
-
 Legacy, deprecated combined Homebrew tap for Georgi Mullassery's open-source
 tools. It has been superseded by two maintained partial taps:
 
