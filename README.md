@@ -3,8 +3,8 @@
 Legacy, deprecated combined Homebrew tap for Georgi Mullassery's open-source
 tools. It has been superseded by two maintained partial taps:
 
-- [`Mullassery/homebrew-prismnote`](https://github.com/Mullassery/homebrew-prismnote) — `prismnote`
-- [`Mullassery/homebrew-tinybridge`](https://github.com/Mullassery/homebrew-tinybridge) — `tinybridge`, `tinybridged`
+- [`Mullassery/homebrew-prismnote`](../homebrew-prismnote) — `prismnote`
+- [`Mullassery/homebrew-tinybridge`](../homebrew-tinybridge) — `tinybridge`, `tinybridged`
 
 ## Usage
 
